@@ -1,218 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-        font-family: Arial, sans-serif;
-      }
-    
-      #background {
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background: radial-gradient(circle, rgb(0, 0, 0), rgb(1, 44, 42));
-      }
-    
-      .star {
-        position: absolute;
-        background: rgb(57, 255, 215);
-        border-radius: 50%;
-        transform: scale(0);
-        animation: sparkle 2s infinite, drift linear infinite;
-      }
-    
-      @keyframes sparkle {
-        0%, 100% {
-          opacity: 0;
-          transform: scale(0);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-    
-      @keyframes drift {
-        0%, 100% {
-          transform: translate(0, 0);
-        }
-        50% {
-          transform: translate(50px, -50px);
-        }
-      }
-    </style>
-    </head>
-      <div id="background">
-        <!-- Generating stars -->
-        <script>
-          const numStars = 300;
-          const background = document.getElementById('background');
-    
-          for (let i = 0; i < numStars; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.width = `${Math.random() * 3}px`;
-            star.style.height = star.style.width;
-            star.style.left = `${Math.random() * 100}vw`;
-            star.style.top = `${Math.random() * 100}vh`;
-    
-            background.appendChild(star);
-          }
-        </script>
-      </div>
-    </body>
-        <style>
-          body {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-          }
-          input {
-            margin-bottom: 10px;
-          }
-        </style>
-      <style>
-        .image-container {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-    
-        .image {
-          width: 250px;
-          height: 250px;
-          border: 2px solid #daf3f1;
-          margin: 40px;
-          padding: 10px;
-          box-sizing: border-box;
-          transition: all 0.3s ease;
-        }
-    
-        .image:hover {
-          transform: scale(1.1);
-          border-color: #9900ff;
-        }
-      </style>
-    </head>
-    <script>
-        javascript:(function() {
-  var menu = document.createElement('div');
-  var menuContent = document.createElement('div');
-  var closeButton = document.createElement('span');
-  var button = document.createElement('button');
-
-  menu.style.cssText = `
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-    background-color: rgba(0, 255, 255, 0.2); 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    width: 200px;
-  `;
-
-  menuContent.style.padding = '10px';
-
-  closeButton.style.cssText = `
-    float: right;
-    cursor: pointer;
-    color: #333;
-  `;
-  closeButton.innerHTML = '&times;';
-  closeButton.onclick = function() {
-    menu.remove();
-  };
-
-  button.innerHTML = 'Launch ByeBlocker';
-  button.style.cssText = `
-    font-family: Arial;
-    font-size: 16px;
-    color: #fff;
-    background-color: #333;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    cursor: pointer;
-  `;
-  button.onclick = function() {
-    var link = prompt("Url?");
-    var proxy = 'https://api.codetabs.com/v1/proxy?quest=';
-    fetch(proxy + link)
-      .then((response) => response.text())
-      .then((text) => document.write(text));
-    var all = document.getElementsByTagName("*");
-    for (var i = 0, max = all.length; i < max; i++) {
-      if (all[i].src) {
-        all[i].src = new URL(all[i].src, link).href;
-        all[i].src = proxy + all[i].src;
-      }
-    }
-    window.onbeforeunload = function(e) {
-      e.preventDefault();
-      alert(e.toString());
-    };
-    function locationHashChanged(e) {
-      e.preventDefault();
-      alert(e);
-      window.location = new URL(e.oldURL, e.newURL).href;
-    }
-    window.onhashchange = locationHashChanged;
-  };
-
-  menuContent.appendChild(button);
-  menuContent.appendChild(closeButton);
-  menu.appendChild(menuContent);
-  document.body.appendChild(menu);
-
-  var isDragging = false;
-  var mouseOffset = { x: 0, y: 0 };
-
-  menuContent.addEventListener('mousedown', function(e) {
-    isDragging = true;
-    mouseOffset.x = e.pageX - menu.offsetLeft;
-    mouseOffset.y = e.pageY - menu.offsetTop;
-  });
-
-  document.addEventListener('mousemove', function(e) {
-    if (isDragging) {
-      menu.style.left = (e.pageX - mouseOffset.x) + 'px';
-      menu.style.top = (e.pageY - mouseOffset.y) + 'px';
-    }
-  });
-
-  document.addEventListener('mouseup', function() {
-    isDragging = false;
-  });
-})();
-    </script>
-  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="emulator, games, unblocked, gaming, game website, proxy, etc.">
+  <title>Google</title>
+  <link rel="stylesheet" href="head/styles.css">
+  <link rel="icon" type="image/png" href="https://i.ibb.co/zFr0mR4/Google-icon-icons-com-66793.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000; 
-    }
-    .bottom-left {
-      position: fixed;
-      bottom: 0;
+    #particles-js {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
       left: 0;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.2); 
-      padding: 10px;
+      z-index: -2;
+      overflow: hidden;
+    }
+    #particles-fade {
+      position: absolute;
+      top: 8vw;
+      background-image: linear-gradient(rgba(0, 0, 0, 0), var(--background-color));
+      width: 100vw;
+      height: 92vh;
+      z-index: -1;
+    }
+    .random-button-container {
+      margin-top: 20px;
     }
   </style>
-  </head>
-  <body>
-    <div class="bottom-left">
-BarfbagX2 on github
- </div>
-  </body>
-    ]
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div id="particles-fade"></div>
+  <div id="header">
+    <h1><a href="#" id="title"><img src="https://i.ibb.co/TDrRB7VH/Trailblazer-X.png" alt="Logo"></a></h1>
+    <div class="nav-links">
+      <a href="/Apps" class="icon" title="apps">Apps</a>
+     <a href="/Proxy" class="icon" title="proxy">Proxy</a>
+      <a href="#faq">FAQ</a>
+      <a href="#changelog">Changelog</a>
+      <a href="/Cloaker" class="icon" title="apps">Cloaker</a>
+      <input type="text" id="search" placeholder="Search for a game...">
+      <button id="theme-toggle">🌕</button>
+    </div>
+  </div>
+  <div id="dropdown">
+    <h2>Settings</h2>
+    <label>
+      <input type="checkbox" id="particles-toggle" checked> Show Particles
+    </label>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+ 
+  <div class="random-button-container">
+    <button id="random-game">Random Game 🎲</button>
+  </div>
+  <div class="container"></div>
+  
+ 
+  
+  <div id="faq" class="section">
+    <h2>FAQ</h2>
+    <p><b>Q: Why isn't the games working on mobile?</b></p>
+    <p>A: Honestly I Dont Care...</p>
+    <p><b>Q: How can I provide feedback?</b></p>
+    <p>You cant...</p>
+  </div>
+  
+  <div id="changelog" class="section">
+    <h2>Changelog</h2>
+    <p>Release Update!</p>
+    <ul>
+      <li>New Website Now Out!</li>
+      <li>More Games!</li>
+      <li>New Links!</li>
+      <li>Tons Of UI Changes!</li>
+      <li>Finally Fixed Search Bar!</li>
+      <li>New 404 Page!</li>
+      <li>Improved File Structure!</li>
+      <li>Faster Loading!</li>
+    </ul>
+  </div>
+
+
+    <div id="cp-footer">
+      <i class="bi bi-cookie"></i>
+      <p>All Games Are Not Owned By me and open source projects made by others
+      </p>
+    </div>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+alert("Welcome To TrailblazerX Before You Start Make Sure to Allow Popups Then Click On Cloaker So Teachers Cant See Your Screen!");
+  document.addEventListener('DOMContentLoaded', function () {
+    const particlesToggle = document.getElementById('particles-toggle');
+    const particlesContainer = document.getElementById('particles-js');
+    const title = document.getElementById('title');
+    const dropdown = document.getElementById('dropdown');
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    const savedParticlesSetting = JSON.parse(localStorage.getItem('particlesEnabled')) ?? true;
+    particlesToggle.checked = savedParticlesSetting;
+    particlesContainer.style.display = savedParticlesSetting ? 'block' : 'none';
+    particlesToggle.addEventListener('change', function () {
+      const isChecked = particlesToggle.checked;
+      particlesContainer.style.display = isChecked ? 'block' : 'none';
+      localStorage.setItem('particlesEnabled', JSON.stringify(isChecked));
+    });
+    title.addEventListener('click', function () {
+      dropdown.classList.toggle('open');
+    });
+    function loadParticles(theme) {
+      const particlesConfig = theme === 'light-mode' ? 'dark-particles.json' : 'light-particles.json';
+      particlesJS.load('particles-js', `head/${particlesConfig}`, function() {
+        console.log(`Particles.js config (${particlesConfig}) loaded`);
+      });
+    }
+    const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+    document.body.classList.add(savedTheme);
+    themeToggle.textContent = savedTheme === 'light-mode' ? '🌙' : '☀️';
+    loadParticles(savedTheme);
+    themeToggle.addEventListener('click', function () {
+      const isLightMode = document.body.classList.toggle('light-mode');
+      const newTheme = isLightMode ? 'light-mode' : 'dark-mode';
+      localStorage.setItem('theme', newTheme);
+      themeToggle.textContent = isLightMode ? '🌙' : '☀️';
+      loadParticles(newTheme);
+    });
+    document.getElementById('random-game').addEventListener('click', function () {
+      const games = document.querySelectorAll('.button-container');
+      const randomGame = games[Math.floor(Math.random() * games.length)];
+      const onClickValue = randomGame.getAttribute('onclick');
+      const url = onClickValue.match(/location\.href='([^']+)'/)[1];
+      window.location.href = url;
+    });
+  });
+document.addEventListener('DOMContentLoaded', function () {
+
+  
+
+  const searchInput = document.getElementById('search');
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const gameContainers = document.querySelectorAll('.button-container');
+    
+    gameContainers.forEach(container => {
+      const gameName = container.querySelector('.button-text').textContent.toLowerCase();
+      if (gameName.includes(searchTerm)) {
+        container.style.display = 'flex';
+      } else {
+        container.style.display = 'none';
+      }
+    });
+  });
+});
+    
+  window.onload = function() {
+    fetch('head/games.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        const games = data.games;
+        const container = document.querySelector('.container');
+        Object.keys(games).forEach(gameName => {
+          const gameLink = games[gameName];
+          const buttonContainer = document.createElement('div');
+          buttonContainer.classList.add('button-container');
+          buttonContainer.setAttribute('onclick', `location.href='${gameLink}/'`);
+          const img = document.createElement('img');
+          img.src = `/${gameLink}/img.jpeg`;
+          img.alt = gameName;
+          const span = document.createElement('span');
+          span.classList.add('button-text');
+          span.textContent = gameName;
+          buttonContainer.appendChild(img);
+          buttonContainer.appendChild(span);
+          container.appendChild(buttonContainer);
+        });
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  };
+  </script>
+</body>
+</html>
